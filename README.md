@@ -25,10 +25,4 @@ Green - Resnet
 
 After testing the models on training and testing data, I got the folowing results for accuracy:
 
-SimpleNet:  Training = 0.008595, Testing = 0.008705
-
-CNN:        Training = 0.939096, Testing = 0.029598
-
-DarkNet     Training = 0.079691, Testing = 0.055341
-
-Resnet      Training = 0.997544, Testing = 0.830742
+f![Accuracy](https://user-images.githubusercontent.com/105107071/173174067-61091b17-2244-432b-9448-4d13ce8c3075.png)
