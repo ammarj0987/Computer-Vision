@@ -26,3 +26,12 @@ Green - Resnet
 After testing the models on training and testing data, I got the folowing results for accuracy:
 
 f![Accuracy](https://user-images.githubusercontent.com/105107071/173174067-61091b17-2244-432b-9448-4d13ce8c3075.png)
+
+Since Resnet got the best accuracy, lets test it on some images
+
+![download](https://user-images.githubusercontent.com/105107071/173174140-968a8f62-6d56-45a3-8142-281cf9c35dd3.png)
+
+GroundTruth:  Suzuki Aerio Sedan 2007 Ferrari 458 Italia Convertible 2012 Jeep Patriot SUV 2012 Toyota Camry Sedan 2012
+
+Predicted:  Suzuki Aerio Sedan 2007 Ferrari 458 Italia Convertible 2012 Jeep Patriot SUV 2012 Toyota Camry Sedan 2012
+
