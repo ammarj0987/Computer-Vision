@@ -30,14 +30,12 @@ print(device)
 def get_stanfordCars_data():
     transform_train = transforms.Compose([
         transforms.Resize((256, 256)),
-        # transforms.RandomCrop(256, padding=4, padding_mode='edge'),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
     ])
     
     transform_test = transforms.Compose([
         transforms.Resize((256, 256)),
-        # transforms.RandomCrop(256, padding=4, padding_mode='edge'),
         transforms.ToTensor(),
     ])
     trainset = torchvision.datasets.StanfordCars(root='./data', split='train', download=True, transform=transform_train)
@@ -62,7 +60,6 @@ print(len(data['classes']))
 
 dataiter = iter(data['train'])
 images, labels = dataiter.next()
-# images = images[:8]
 
 def imshow(img):
     npimg = img.numpy()
@@ -78,7 +75,7 @@ flat = torch.flatten(images, 1)
 print(images.size())
 print(flat.size())
 
-"""We will build a basic neural netword with SimpleNet"""
+"""We will build a basic neural network with SimpleNet"""
 
 class SimpleNet(nn.Module):
   def __init__(self, inputs=196608, hidden=512, outputs=196):
@@ -93,7 +90,7 @@ class SimpleNet(nn.Module):
     x = self.fc2(x)
     return x
 
-"""We will not build a CNN"""
+"""We will now build a CNN"""
 
 class ConvNet(nn.Module):
     def __init__(self):
@@ -130,11 +127,11 @@ class ConvNet(nn.Module):
         x = self.fc1(x)
         return x
 
-"""Use Bacth Normalization to make training faster"""
+"""We build Darknet to improve accuracy"""
 
-class Darknet64(nn.Module):
+class Darknet(nn.Module):
     def __init__(self):
-        super(Darknet64, self).__init__() # https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html
+        super(Darknet, self).__init__() # https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html
         self.conv1 = nn.Conv2d(3, 16, 3, padding=1, bias=False)
         self.bn1 = nn.BatchNorm2d(16)
 
@@ -207,7 +204,7 @@ conv_losses = train(conv_net, data['train'])
 
 """Training with darknet"""
 
-dark_net = Darknet64()
+dark_net = Darknet()
 dark_losses = train(dark_net, data['train'])
 
 """Training with resnet"""
@@ -257,8 +254,8 @@ def accuracy(net, dataloader):
 
 """Comparing the accuracy for our testing and training model."""
 
-print("Current accuracy: %f" % accuracy(simple_net, data['train']))
-print("Current accuracy: %f" % accuracy(simple_net, data['test']))
+print("Training accuracy: %f" % accuracy(simple_net, data['train']))
+print("Testing accuracy: %f" % accuracy(simple_net, data['test']))
 
 print("Training accuracy: %f" % accuracy(conv_net, data['train']))
 print("Testing accuracy: %f" % accuracy(conv_net, data['test']))
