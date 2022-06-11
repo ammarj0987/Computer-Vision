@@ -13,9 +13,22 @@ The first model I used is called SimpleNet. It takes the flatten image size as i
 
 For my training function, I used the following parameter values: epochs=10, lr=0.01, momentum=0.9, decay=0.0, verbose=1. For simpleNet, I set epochs to 5 because the loss remained the same after 5 epochs. After training each model, I got the folowing graph for losses:
 
+Red - SimpleNet
+
+Black - DarkNet
+
+Blue - CNN
+
+Green - Resnet
+
+![download](https://user-images.githubusercontent.com/105107071/173172740-b8f130cd-05b0-445a-b731-6094b11f59c8.png)
 
 After testing the models on training and testing data, I got the folowing results for accuracy:
-SimpleNet:  Testing = , Training =
-CNN:        Testiong =, Training =
-DarkNet     Testing = , Training = 
-Resnet      Testing = , Training = 
+
+SimpleNet:  Training = 0.008595, Testing = 0.008705
+
+CNN:        Training = 0.939096, Testing = 0.029598
+
+DarkNet     Training = 0.079691, Testing = 0.055341
+
+Resnet      Training = 0.997544, Testing = 0.830742
