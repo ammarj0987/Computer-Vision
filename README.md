@@ -25,7 +25,7 @@ Green - Resnet
 
 After testing the models on training and testing data, I got the following results for accuracy:
 
-f![Accuracy](https://user-images.githubusercontent.com/105107071/173174067-61091b17-2244-432b-9448-4d13ce8c3075.png)
+![Accuracy](https://user-images.githubusercontent.com/105107071/173174067-61091b17-2244-432b-9448-4d13ce8c3075.png)
 
 Since Resnet got the best accuracy, lets test it on some images
 
